@@ -1,7 +1,7 @@
 const app = require('express')();
 
 app.get('/', (req, res) => {
-  res.send('Hello, My jenkins World!\n');
+  res.send('Hello, Jenkins!\n');
 });
 
 app.get('/newEndpoint', (req, res) => {
