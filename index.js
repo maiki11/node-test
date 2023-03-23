@@ -5,7 +5,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/newEndpoint', (req, res) => {
-  res.send('My new endpoint!\n');
+  res.send('My new endpoint...!\n');
 });
 
 app.listen(3000, '0.0.0.0');
