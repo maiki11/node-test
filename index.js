@@ -8,4 +8,4 @@ app.get('/newEndpoint', (req, res) => {
   res.send('My new endpoint...!\n');
 });
 
-app.listen(3000, '0.0.0.0');
+app.listen(3000, 'localhost');
