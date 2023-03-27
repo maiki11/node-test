@@ -1,7 +1,7 @@
 const app = require('express')();
 
 app.get('/', (req, res) => {
-  res.send('Hello, Jenkins, change build for jenkins!\n');
+  res.send('Hello this changes are uploaded on the instance!\n');
 });
 
 app.get('/newEndpoint', (req, res) => {
