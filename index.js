@@ -1,7 +1,7 @@
 const app = require('express')();
 
 app.get('/', (req, res) => {
-  res.send('Hello this changes are uploaded on the instance part 2!\n');
+  res.send('Hello this changes are uploaded on the instance part 3!\n');
 });
 
 app.get('/newEndpoint', (req, res) => {
