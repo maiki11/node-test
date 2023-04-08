@@ -6,7 +6,7 @@ pipeline {
         /* This stage pulls the latest image from
            Dockerhub */
             steps {
-                sh 'sudo docker pull karthequian/helloworld:latest'
+                sh 'sudo docker pull miguelreinas/node:latest'
           }
         }
         stage('Build docker image') {
