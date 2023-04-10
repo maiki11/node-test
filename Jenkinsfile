@@ -20,7 +20,7 @@ pipeline {
          /* This stage runs unit tests on the image; we are
             just running dummy tests here */
             steps {
-                sh 'echo "Tests successful"'
+                sh 'echo "Tests successful approved"'
           }
         }
         stage('Push image to OCIR') {
