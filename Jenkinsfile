@@ -6,6 +6,7 @@ pipeline {
         /* This stage pulls the latest image from
            Dockerhub */
             steps {
+                sh 'sudo docker image prune -a -f'
                 sh 'sudo docker pull miguelreinas/node:latest'
           }
         }
