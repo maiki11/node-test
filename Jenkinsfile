@@ -32,7 +32,7 @@ pipeline {
             docker image to our OCI private Registry*/
         steps {
             sh "sudo docker login -u 'axwrtlp0n4xv/miguel@doorcounts.com' -p 'Us1+K(iJo5y18b+hI9mY' sjc.ocir.io"
-            sh "sudo docker tag customapp:1 sjc.ocir.io/axwrtlp0n4xv/customapp:${DOCKER_TAG}"
+            sh "sudo docker tag customapp:1 sjc.ocir.io/axwrtlp0n4xv/customapp:custom"
             //sh "sudo docker tag sjc.ocir.io/axwrtlp0n4xv/customapp:custom sjc.ocir.io/axwrtlp0n4xv/customapp:${DOCKER_TAG}"
             sh 'sudo docker push sjc.ocir.io/axwrtlp0n4xv/customapp:custom'
             
