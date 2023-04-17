@@ -1,3 +1,4 @@
+def imageTag = "sjc.ocir.io/axwrtlp0n4xv/customapp:${BUILD_NUMBER}"
 pipeline {
     agent any
     
