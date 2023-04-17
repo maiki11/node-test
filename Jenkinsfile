@@ -1,9 +1,5 @@
 pipeline {
     agent any
-    environment {
-        // DOCKER_IMAGE = 'my-docker-registry.com/my-image'
-        DOCKER_TAG = sh(script: 'git describe --tags --abbrev=0', returnStdout: true).trim()
-    }
     stages {
         stage('Fetch dependencies') {
         /* This stage pulls the latest image from
@@ -33,7 +29,7 @@ pipeline {
         steps {
             sh "sudo docker login -u 'axwrtlp0n4xv/miguel@doorcounts.com' -p 'Us1+K(iJo5y18b+hI9mY' sjc.ocir.io"
             sh "sudo docker tag customapp:1 sjc.ocir.io/axwrtlp0n4xv/customapp:custom"
-            //sh "sudo docker tag sjc.ocir.io/axwrtlp0n4xv/customapp:custom sjc.ocir.io/axwrtlp0n4xv/customapp:${DOCKER_TAG}"
+            sh "sudo docker tag sjc.ocir.io/axwrtlp0n4xv/customapp:custom sjc.ocir.io/axwrtlp0n4xv/customapp:${env.BUILD_NUMBER}"
             sh 'sudo docker push sjc.ocir.io/axwrtlp0n4xv/customapp:custom'
             
            }
