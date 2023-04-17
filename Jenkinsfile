@@ -10,12 +10,12 @@ pipeline {
           }
         }
         stage('Build docker image') {
-            def imageTag = "sjc.ocir.io/axwrtlp0n4xv/customapp:${BUILD_NUMBER}"
         /* This stage builds the actual image; synonymous to
            docker build on the command line */
             steps {
-            //sh "sudo docker build . -t customapp:1"
-            sh "docker build -t ${imageTag} ."
+                def imageTag = "sjc.ocir.io/axwrtlp0n4xv/customapp:${BUILD_NUMBER}"
+                //sh "sudo docker build . -t customapp:1"
+                sh "docker build -t ${imageTag} ."
             }    
         }
         stage('Test image') {
@@ -28,10 +28,10 @@ pipeline {
 
 
         stage('Push image to OCIR') {
-            def imageTag = "sjc.ocir.io/axwrtlp0n4xv/customapp:${BUILD_NUMBER}"
          /* Final stage of build; Push the 
             docker image to our OCI private Registry*/
             steps {
+                def imageTag = "sjc.ocir.io/axwrtlp0n4xv/customapp:${BUILD_NUMBER}"
                 sh "sudo docker login -u 'axwrtlp0n4xv/miguel@doorcounts.com' -p 'Us1+K(iJo5y18b+hI9mY' sjc.ocir.io"
                 //sh "sudo docker tag customapp:1 sjc.ocir.io/axwrtlp0n4xv/customapp:custom"
                 //sh "sudo docker tag sjc.ocir.io/axwrtlp0n4xv/customapp:custom sjc.ocir.io/axwrtlp0n4xv/customapp:${env.BUILD_NUMBER}"
@@ -41,10 +41,10 @@ pipeline {
             }
         } 
         stage('Deploy to OKE') {
-            def imageTag = "sjc.ocir.io/axwrtlp0n4xv/customapp:${BUILD_NUMBER}"
             /* Deploy the image to OKE*/
 
             steps {
+                def imageTag = "sjc.ocir.io/axwrtlp0n4xv/customapp:${BUILD_NUMBER}"
                 /*sh "'sudo cp /var/lib/jenkins/workspace/deploy.sh /var/lib/jenkins/workspace/jenkins-oci_master'"*/
                 //sh 'sh ../../hello-deploy.sh'
                 sh "kubectl create secret docker-registry secret --docker-server=sjc.ocir.io --docker-username='axwrtlp0n4xv/miguel@doorcounts.com' --docker-password='Us1+K(iJo5y18b+hI9mY' --docker-email='miguel@doorcounts.com'"
