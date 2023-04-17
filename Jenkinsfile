@@ -1,7 +1,7 @@
 pipeline {
     agent any
-    def imageTag = "sjc.ocir.io/axwrtlp0n4xv/customapp:${BUILD_NUMBER}"
     stages {
+        def imageTag = "sjc.ocir.io/axwrtlp0n4xv/customapp:${BUILD_NUMBER}"
         stage('Fetch dependencies') {
         /* This stage pulls the latest image from
            Dockerhub */
