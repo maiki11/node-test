@@ -48,7 +48,7 @@ pipeline {
                 sh 'sh ../../hello-deploy.sh'
                 //sh "kubectl create secret docker-registry secret --docker-server=sjc.ocir.io --docker-username='axwrtlp0n4xv/miguel@doorcounts.com' --docker-password='Us1+K(iJo5y18b+hI9mY' --docker-email='miguel@doorcounts.com'"
                 //sh "sudo docker login -u 'axwrtlp0n4xv/miguel@doorcounts.com' -p 'Us1+K(iJo5y18b+hI9mY' sjc.ocir.io"
-                sh "kubectl apply -f hello.yml --set image.tag=${imageTag}"
+                //sh "kubectl apply -f hello.yml --set image.tag=${imageTag}"
             }
          }     
     }
