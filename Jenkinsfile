@@ -42,7 +42,7 @@ pipeline {
             steps {
                 /*sh "'sudo cp /var/lib/jenkins/workspace/deploy.sh /var/lib/jenkins/workspace/jenkins-oci_master'"*/
                 sh 'sh ../../hello-deploy.sh'
-                sh "kubectl apply -f hello.yml --namespace=my-namespace --set image.tag=${imageTag}"
+                sh "kubectl apply -f hello.yml --namespace=my-namespace image.tag=${imageTag}"
             }
         }     
     }
