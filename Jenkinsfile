@@ -1,4 +1,4 @@
-def imageTag = ${BUILD_NUMBER}
+def imageTag = env.BUILD_NUMBER
 pipeline {
     agent any
     
