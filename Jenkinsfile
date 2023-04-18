@@ -33,7 +33,7 @@ pipeline {
             sh "sudo docker login -u 'axwrtlp0n4xv/miguel@doorcounts.com' -p 'Us1+K(iJo5y18b+hI9mY' sjc.ocir.io"
             sh "sudo docker tag customapp:1 sjc.ocir.io/axwrtlp0n4xv/customapp:${imageTag}"
             //sh "sudo docker tag customapp:1 sjc.ocir.io/axwrtlp0n4xv/customapp:custom"
-            sh 'sudo docker push sjc.ocir.io/axwrtlp0n4xv/customapp:${imageTag}'
+            sh "sudo docker push sjc.ocir.io/axwrtlp0n4xv/customapp:${imageTag}"
             
            }
          } 
